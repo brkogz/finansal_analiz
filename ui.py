@@ -47,7 +47,8 @@ uploaded_file = st.sidebar.file_uploader("Excel/CSV dosyası yükle", type=["xls
 if uploaded_file:
     df = data_preparation(uploaded_file)
 else:
-    df = pd.read_excel("EURUSD_1yil_Daily_Processed.xlsx")
+    st.warning("Lütfen bir veri dosyası yükleyin.")
+    st.stop()
 
 st.subheader("Veri Önizleme")
 st.dataframe(df.head())
